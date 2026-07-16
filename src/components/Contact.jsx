@@ -9,7 +9,7 @@ export default function Contact() {
       className="mx-auto max-w-6xl border-t border-line px-6 py-28 text-center sm:px-10"
     >
       <Eyebrow className="mb-6 justify-center">
-        Index / 03 — Contact
+        Index / 04 — Contact
       </Eyebrow>
 
       <motion.p

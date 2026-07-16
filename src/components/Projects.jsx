@@ -1,5 +1,5 @@
 import projects from "../data/projects";
-import ProjectTile from "./ProjectTile";
+import ProjectRow from "./ProjectRow";
 import Eyebrow from "./Eyebrow";
 
 const groups = [
@@ -14,7 +14,7 @@ export default function Projects() {
       className="mx-auto max-w-6xl border-t border-line px-6 py-28 sm:px-10"
     >
       <div className="mb-16">
-        <Eyebrow className="mb-4">Index / 02 — Work</Eyebrow>
+        <Eyebrow className="mb-4">Index / 03 — Work</Eyebrow>
         <h2 className="font-display text-4xl text-ink sm:text-5xl">
           Selected projects
         </h2>
@@ -32,9 +32,9 @@ export default function Projects() {
                 {String(items.length).padStart(2, "0")}
               </span>
             </div>
-            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2">
+            <div>
               {items.map((project, i) => (
-                <ProjectTile key={project.title} project={project} index={i} />
+                <ProjectRow key={project.title} project={project} index={i} />
               ))}
             </div>
           </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import profile from "../data/profile";
 import Reveal from "./Reveal";
 import TextLink from "./TextLink";
+import Magnetic from "./Magnetic";
 import { GithubIcon, LinkedinIcon } from "./icons/BrandIcons";
 
 export default function Hero() {
@@ -43,8 +44,12 @@ export default function Hero() {
           transition={{ delay: 0.65, duration: 0.6, ease: "easeOut" }}
           className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
         >
-          <TextLink href="#projects">View work</TextLink>
-          <TextLink href="#contact">Get in touch</TextLink>
+          <Magnetic>
+            <TextLink href="#projects">View work</TextLink>
+          </Magnetic>
+          <Magnetic>
+            <TextLink href="#contact">Get in touch</TextLink>
+          </Magnetic>
         </motion.div>
       </div>
 
