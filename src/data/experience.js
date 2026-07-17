@@ -1,35 +1,48 @@
 // Chronological-ish list of roles/education for the Experience section.
 // TODO: fill in `period` (e.g. "2022 — 2025") for each entry, and adjust
 // `role` titles if these aren't your exact ones.
+//
+// logo: a small badge shown next to each row — the ones below are
+// generic placeholder marks (not real company logos), swap them out
+// or leave them, your call.
+
+import esilvLogo from "../assets/experience/esilv.svg";
+import dassaultLogo from "../assets/experience/dassault-systemes.svg";
+import freelanceLogo from "../assets/experience/freelance.svg";
+import esportsLogo from "../assets/experience/esports.svg";
 
 const experience = [
   {
-    period: null,
+    period: "2026",
     org: "ESILV",
-    role: "Software Engineering — Cloud & Cybersecurity",
+    role: "Software Engineering, Cloud & Cybersecurity",
     description:
       "Graduated as a software engineer specialized in cloud computing, cybersecurity, and software development.",
+    logo: esilvLogo,
   },
   {
-    period: null,
+    period: "Jan – Jul 2026",
     org: "Dassault Systèmes",
     role: "R&D Engineer",
     description:
-      "Worked on Kubernetes autoscaling and distributed databases as part of the R&D team.",
+      "Six-month R&D mission working on Kubernetes autoscaling and distributed databases.",
+    logo: dassaultLogo,
   },
   {
     period: null,
     org: "Freelance",
     role: "Full-Stack Developer",
     description:
-      "Shipped full web platforms for real clients end to end — AsiaPierce, HairGo, and OA Events among them.",
+      "Shipped full web platforms for real clients end to end: AsiaPierce, HairGo, and OA Events among them.",
+    logo: freelanceLogo,
   },
   {
-    period: null,
+    period: "2020 – 2025",
     org: "Semi-professional esports team",
     role: "Team Manager",
     description:
-      "Managed a semi-professional esports team — leadership and communication experience that carried straight into how I work with clients and teams.",
+      "Managed a semi-professional esports team for five years, leadership and communication experience that carried straight into how I work with clients and teams.",
+    logo: esportsLogo,
   },
 ];
 

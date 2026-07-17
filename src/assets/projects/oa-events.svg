@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+  <defs>
+    <linearGradient id="marble" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1c1a"/>
+      <stop offset="50%" stop-color="#161615"/>
+      <stop offset="100%" stop-color="#1c1c1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#marble)"/>
+  <path d="M-100 300 L500 -100" stroke="#292825" stroke-width="2" opacity="0.5"/>
+  <path d="M100 500 L700 -100" stroke="#292825" stroke-width="2" opacity="0.4"/>
+  <path d="M900 1200 L1700 200" stroke="#292825" stroke-width="2" opacity="0.4"/>
+  <path d="M1100 1200 L1900 400" stroke="#292825" stroke-width="2" opacity="0.5"/>
+
+  <!-- browser chrome -->
+  <rect width="1600" height="56" fill="#0a0a0a"/>
+  <line x1="0" y1="56" x2="1600" y2="56" stroke="#292825"/>
+  <circle cx="28" cy="28" r="6" fill="#292825"/>
+  <circle cx="52" cy="28" r="6" fill="#292825"/>
+  <circle cx="76" cy="28" r="6" fill="#292825"/>
+  <rect x="150" y="14" width="340" height="28" rx="14" fill="#161615" stroke="#292825"/>
+
+  <!-- nav -->
+  <rect x="0" y="56" width="1600" height="88" fill="#0a0a0a"/>
+  <line x1="0" y1="144" x2="1600" y2="144" stroke="#292825"/>
+  <text x="48" y="112" font-family="Georgia, serif" font-size="30" font-weight="600" fill="#c9a24b" letter-spacing="1">OA Events</text>
+  <text x="1200" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">CATALOG</text>
+  <text x="1330" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">GALLERY</text>
+  <text x="1470" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">BOOK</text>
+
+  <!-- hero -->
+  <rect x="120" y="210" width="480" height="32" rx="6" fill="#f5f4f0"/>
+  <rect x="120" y="256" width="340" height="16" rx="4" fill="#aeada9"/>
+  <rect x="120" y="304" width="170" height="46" rx="4" fill="#c9a24b"/>
+  <rect x="160" y="321" width="90" height="12" rx="6" fill="#161615"/>
+
+  <!-- catalog grid: furniture icons -->
+  <text x="120" y="440" font-family="monospace" font-size="13" letter-spacing="2" fill="#6d6c68">CATALOG</text>
+  <g stroke="#c9a24b" stroke-width="2.5" fill="none">
+    <rect x="120" y="470" width="340" height="230" rx="4" stroke="#292825" fill="#0a0a0a"/>
+    <path d="M230 640 v-70 h100 v70 M220 640 h120 M240 570 v-20 h80 v20"/>
+
+    <rect x="500" y="470" width="340" height="230" rx="4" stroke="#292825" fill="#0a0a0a"/>
+    <ellipse cx="670" cy="620" rx="70" ry="14"/>
+    <path d="M620 620 v-50 M720 620 v-50 M600 570 h140"/>
+
+    <rect x="880" y="470" width="340" height="230" rx="4" stroke="#292825" fill="#0a0a0a"/>
+    <path d="M1000 660 v-90 M1100 660 v-90 M990 570 h120 v-15 h-120 z"/>
+
+    <rect x="1260" y="470" width="220" height="230" rx="4" stroke="#292825" fill="#0a0a0a"/>
+    <circle cx="1370" cy="590" r="35"/>
+    <path d="M1340 640 h60"/>
+  </g>
+  <rect x="120" y="712" width="150" height="12" rx="4" fill="#aeada9"/>
+  <rect x="500" y="712" width="150" height="12" rx="4" fill="#aeada9"/>
+  <rect x="880" y="712" width="150" height="12" rx="4" fill="#aeada9"/>
+  <rect x="1260" y="712" width="150" height="12" rx="4" fill="#aeada9"/>
+
+  <!-- gallery strip -->
+  <text x="120" y="820" font-family="monospace" font-size="13" letter-spacing="2" fill="#6d6c68">GALLERY</text>
+  <rect x="120" y="850" width="330" height="150" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="465" y="850" width="330" height="150" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="810" y="850" width="330" height="150" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="1155" y="850" width="325" height="150" fill="#0a0a0a" stroke="#292825"/>
+
+  <line x1="120" y1="1030" x2="1480" y2="1030" stroke="#292825"/>
+</svg>

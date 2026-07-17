@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+  <rect width="1600" height="1100" fill="#161615"/>
+
+  <!-- browser chrome -->
+  <rect width="1600" height="56" fill="#0a0a0a"/>
+  <line x1="0" y1="56" x2="1600" y2="56" stroke="#292825"/>
+  <circle cx="28" cy="28" r="6" fill="#292825"/>
+  <circle cx="52" cy="28" r="6" fill="#292825"/>
+  <circle cx="76" cy="28" r="6" fill="#292825"/>
+  <rect x="150" y="14" width="340" height="28" rx="14" fill="#161615" stroke="#292825"/>
+
+  <!-- nav -->
+  <rect x="0" y="56" width="1600" height="88" fill="#0a0a0a"/>
+  <line x1="0" y1="144" x2="1600" y2="144" stroke="#292825"/>
+  <text x="48" y="112" font-family="Georgia, serif" font-size="30" font-weight="600" fill="#c9a24b" letter-spacing="1">AsiaPierce</text>
+  <text x="1140" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">SHOP</text>
+  <text x="1230" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">BOOK</text>
+  <text x="1320" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">GALLERY</text>
+  <text x="1470" y="105" font-family="monospace" font-size="12" letter-spacing="2" fill="#aeada9">CART</text>
+
+  <!-- hero -->
+  <ellipse cx="800" cy="300" rx="380" ry="180" fill="#c9a24b" opacity="0.07"/>
+  <rect x="120" y="220" width="520" height="34" rx="6" fill="#f5f4f0"/>
+  <rect x="120" y="268" width="380" height="16" rx="4" fill="#aeada9"/>
+  <rect x="120" y="320" width="170" height="46" rx="23" fill="#c9a24b"/>
+  <rect x="160" y="337" width="90" height="12" rx="6" fill="#161615"/>
+
+  <rect x="820" y="190" width="360" height="260" rx="4" fill="#0a0a0a" stroke="#292825"/>
+  <circle cx="1000" cy="320" r="46" fill="none" stroke="#c9a24b" stroke-width="3"/>
+  <circle cx="1000" cy="320" r="12" fill="none" stroke="#c9a24b" stroke-width="3"/>
+
+  <!-- product grid -->
+  <rect x="120" y="500" width="430" height="260" rx="4" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="150" y="530" width="370" height="150" fill="#161615" stroke="#292825"/>
+  <path d="M335 570 L365 605 L335 640 L305 605 Z" fill="none" stroke="#c9a24b" stroke-width="2"/>
+  <rect x="150" y="700" width="180" height="14" rx="4" fill="#aeada9"/>
+  <rect x="150" y="726" width="80" height="16" rx="4" fill="#c9a24b"/>
+
+  <rect x="585" y="500" width="430" height="260" rx="4" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="615" y="530" width="370" height="150" fill="#161615" stroke="#292825"/>
+  <path d="M800 570 L830 605 L800 640 L770 605 Z" fill="none" stroke="#c9a24b" stroke-width="2"/>
+  <rect x="615" y="700" width="180" height="14" rx="4" fill="#aeada9"/>
+  <rect x="615" y="726" width="80" height="16" rx="4" fill="#c9a24b"/>
+
+  <rect x="1050" y="500" width="430" height="260" rx="4" fill="#0a0a0a" stroke="#292825"/>
+  <rect x="1080" y="530" width="370" height="150" fill="#161615" stroke="#292825"/>
+  <path d="M1265 570 L1295 605 L1265 640 L1235 605 Z" fill="none" stroke="#c9a24b" stroke-width="2"/>
+  <rect x="1080" y="700" width="180" height="14" rx="4" fill="#aeada9"/>
+  <rect x="1080" y="726" width="80" height="16" rx="4" fill="#c9a24b"/>
+
+  <!-- booking strip -->
+  <text x="120" y="840" font-family="monospace" font-size="13" letter-spacing="2" fill="#6d6c68">BOOK AN APPOINTMENT</text>
+  <g>
+    <rect x="120" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#292825"/>
+    <rect x="312" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#c9a24b" stroke-width="2"/>
+    <rect x="504" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#292825"/>
+    <rect x="696" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#c9a24b" stroke-width="2"/>
+    <rect x="888" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#292825"/>
+    <rect x="1080" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#c9a24b" stroke-width="2"/>
+    <rect x="1272" y="865" width="175" height="110" rx="4" fill="#0a0a0a" stroke="#292825"/>
+  </g>
+
+  <line x1="120" y1="1030" x2="1480" y2="1030" stroke="#292825"/>
+</svg>

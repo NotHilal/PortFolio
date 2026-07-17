@@ -18,7 +18,7 @@ export default function Button({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors duration-300 ${variants[variant]} ${className}`}
+      className={`inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[11px] uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20 ${variants[variant]} ${className}`}
     >
       {children}
       {Icon && <Icon size={14} strokeWidth={1.75} />}

@@ -3,8 +3,9 @@ import { ExternalLink } from "lucide-react";
 import Button from "./Button";
 import Magnetic from "./Magnetic";
 import { GithubIcon } from "./icons/BrandIcons";
+import { EASE } from "../lib/motion";
 
-export default function ProjectRow({ project, index }) {
+export default function ProjectRow({ project, index, total }) {
   const {
     title,
     category,
@@ -25,15 +26,24 @@ export default function ProjectRow({ project, index }) {
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.7, ease: EASE }}
       className={`flex flex-col gap-8 border-b border-line py-14 first:pt-0 last:border-b-0 md:flex-row md:items-center md:gap-16 ${
         reversed ? "md:flex-row-reverse" : ""
       }`}
     >
       <div className="w-full md:w-1/2">
-        <div className="relative aspect-[4/3] overflow-hidden border border-line bg-paper-dim">
+        {total && (
+          <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-faint">
+            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </p>
+        )}
+        <div className="group/frame relative aspect-[16/11] overflow-hidden border border-line bg-paper-dim">
           {image ? (
-            <img src={image} alt={title} className="h-full w-full object-cover" />
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/frame:scale-105"
+            />
           ) : (
             <div className="flex h-full w-full items-center justify-center px-6">
               <span className="text-center font-display text-3xl text-ink-faint">
@@ -48,7 +58,7 @@ export default function ProjectRow({ project, index }) {
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
           {category}
         </p>
-        <h3 className="mt-2 font-display text-3xl text-ink sm:text-4xl">
+        <h3 className="mt-2 font-display text-3xl tracking-tight text-ink sm:text-4xl">
           {title}
         </h3>
         {meta && (

@@ -1,22 +1,29 @@
 import { motion } from "framer-motion";
 import profile from "../data/profile";
 import Eyebrow from "./Eyebrow";
+import { sectionIndex } from "../data/sections";
+import { EASE } from "../lib/motion";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="mx-auto max-w-6xl border-t border-line px-6 py-28 text-center sm:px-10"
+      className="relative mx-auto max-w-6xl overflow-hidden border-t border-line px-6 py-28 text-center sm:px-10"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[26rem] w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/[0.06] blur-[140px]"
+      />
+
       <Eyebrow className="mb-6 justify-center">
-        Index / 04 — Contact
+        Index / {sectionIndex("contact")} · Contact
       </Eyebrow>
 
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.6 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: EASE }}
         className="font-sans text-base text-ink-soft"
       >
         Have a project in mind?
@@ -27,7 +34,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+        transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
         className="group mt-2 inline-block"
       >
         <span className="text-shine block font-display text-[clamp(3rem,12vw,8rem)] leading-none">
