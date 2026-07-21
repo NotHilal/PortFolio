@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
-import experience from "../data/experience";
+import { useExperience } from "../i18n/useLocalizedData";
+import { useLanguage } from "../i18n/LanguageContext";
 import Eyebrow from "./Eyebrow";
 import { sectionIndex } from "../data/sections";
 import { EASE } from "../lib/motion";
 
 export default function Experience() {
+  const experience = useExperience();
+  const { t } = useLanguage();
   return (
     <section
       id="experience"
@@ -12,10 +15,10 @@ export default function Experience() {
     >
       <div className="mb-16">
         <Eyebrow className="mb-4">
-          Index / {sectionIndex("experience")} · Experience
+          Index / {sectionIndex("experience")} · {t.experience.eyebrow}
         </Eyebrow>
         <h2 className="font-display text-4xl leading-tight tracking-tight text-ink sm:text-5xl">
-          Where I've worked
+          {t.experience.heading}
         </h2>
       </div>
 
@@ -39,7 +42,7 @@ export default function Experience() {
               )}
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.1em] text-accent">
-                  {item.period ?? "Ongoing"}
+                  {item.period ?? t.experience.ongoing}
                 </p>
                 <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-ink-faint">
                   {item.org}

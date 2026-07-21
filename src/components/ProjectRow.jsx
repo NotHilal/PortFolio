@@ -4,8 +4,10 @@ import Button from "./Button";
 import Magnetic from "./Magnetic";
 import { GithubIcon } from "./icons/BrandIcons";
 import { EASE } from "../lib/motion";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function ProjectRow({ project, index, total }) {
+  const { t } = useLanguage();
   const {
     title,
     category,
@@ -76,7 +78,7 @@ export default function ProjectRow({ project, index, total }) {
           {liveUrl && (
             <Magnetic strength={0.25}>
               <Button href={liveUrl} icon={ExternalLink} variant="solid">
-                Live site
+                {t.projects.liveSite}
               </Button>
             </Magnetic>
           )}
@@ -89,7 +91,7 @@ export default function ProjectRow({ project, index, total }) {
           )}
           {!liveUrl && !githubUrl && (
             <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-faint/60">
-              Private project
+              {t.projects.private}
             </span>
           )}
         </div>

@@ -14,32 +14,20 @@ const profile = {
   taglineDetail:
     "From distributed systems to full-stack platforms shipped for real clients.",
   about:
-    "Hey, I'm Hilal, a software engineer graduated from ESILV, specialized in cloud computing, cybersecurity, and software development.",
+    "Hey, I'm Hilal, a software engineer graduated from ESILV, specialized in software development, cloud computing, and cybersecurity.",
   aboutParagraphs: [
-    "I build things end to end. I've shipped full web platforms for real clients, worked in R&D at Dassault Systèmes on Kubernetes autoscaling and distributed databases, and built a full RPG game from scratch in Java just for fun.",
-    "I'm most comfortable with Java, C#, Python, React, TypeScript, and cloud-native tools like Kubernetes and Prometheus. I like working across the full stack and going deep on problems that actually matter.",
-    "Outside of code, I manage a semi-professional esports team, which taught me more about leadership and communication than most things have.",
+    "I build things end to end. I've shipped full web platforms for real clients, done R&D at Dassault Systèmes on Kubernetes autoscaling and distributed databases, and modernized legacy systems at Captag, including live technical support at events like the Louis Vuitton Men's Fashion Show.",
+    "I'm most comfortable with Java, C#, Python, React, TypeScript, and cloud-native tools like Kubernetes, Docker, and Prometheus, working across the full stack from infrastructure to UI.",
+    "Outside of code, I manage a semi-professional esports team, three competitive squads a year, which has taught me as much about leadership and communication as any engineering role.",
   ],
   location: "Paris, France",
-  email: "hilal.elayoubi@gmail.com",
+  email: "hilalelayoubi1@gmail.com",
   resumeUrl: "/resume.pdf",
   socials: {
-    // TODO: add your real GitHub/LinkedIn URLs
-    github: "https://github.com/your-username",
-    linkedin: "https://linkedin.com/in/your-username",
+    github: "https://github.com/NotHilal",
+    linkedin: "https://linkedin.com/in/hilalelayoubi",
     twitter: "",
   },
-  skills: [
-    "Java",
-    "C#",
-    "Python",
-    "React",
-    "TypeScript",
-    "Kubernetes",
-    "Prometheus",
-    "Cloud Computing",
-    "Cybersecurity",
-  ],
 };
 
 export default profile;

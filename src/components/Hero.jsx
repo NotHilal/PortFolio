@@ -7,7 +7,8 @@ import {
   useMotionTemplate,
 } from "framer-motion";
 import { useEffect, useState } from "react";
-import profile from "../data/profile";
+import { useProfile } from "../i18n/useLocalizedData";
+import { useLanguage } from "../i18n/LanguageContext";
 import TextLink from "./TextLink";
 import Magnetic from "./Magnetic";
 import DecryptText from "./DecryptText";
@@ -43,6 +44,8 @@ function LoadingDots({ reduceMotion }) {
 }
 
 export default function Hero() {
+  const profile = useProfile();
+  const { t } = useLanguage();
   const reduceMotion = useReducedMotion();
   const [stage, setStage] = useState(0);
 
@@ -102,9 +105,9 @@ export default function Hero() {
           className="w-[92%] max-w-[1400px] overflow-hidden border border-line bg-paper/70 backdrop-blur-md shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
         >
           <div className="flex items-center gap-2 border-b border-line px-5 py-3">
-            <span className="h-2.5 w-2.5 rounded-full bg-ink-faint/40" />
-            <span className="h-2.5 w-2.5 rounded-full bg-ink-faint/40" />
-            <span className="h-2.5 w-2.5 rounded-full bg-ink-faint/40" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
             <span className="ml-2 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-faint">
               hilal@portfolio — zsh
             </span>
@@ -138,7 +141,7 @@ export default function Hero() {
                   exit="exit"
                   className="mb-10 font-mono text-sm text-ink-faint sm:text-base"
                 >
-                  Server starting
+                  {t.hero.booting}
                   <LoadingDots reduceMotion={reduceMotion} />
                 </motion.p>
               )}
@@ -199,10 +202,10 @@ export default function Hero() {
                 className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
               >
                 <Magnetic>
-                  <TextLink href="#projects">View work</TextLink>
+                  <TextLink href="#projects">{t.hero.viewWork}</TextLink>
                 </Magnetic>
                 <Magnetic>
-                  <TextLink href="#contact">Get in touch</TextLink>
+                  <TextLink href="#contact">{t.hero.getInTouch}</TextLink>
                 </Magnetic>
               </motion.div>
             )}
@@ -216,7 +219,7 @@ export default function Hero() {
           className="mt-8 flex flex-col items-center gap-3"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-ink-faint">
-            Scroll
+            {t.hero.scroll}
           </span>
           <div className="relative h-9 w-px overflow-hidden bg-line">
             <motion.div

@@ -13,20 +13,27 @@ import esportsLogo from "../assets/experience/esports.svg";
 
 const experience = [
   {
-    period: "2026",
+    period: "2020 – 2026",
     org: "ESILV",
     role: "Software Engineering, Cloud & Cybersecurity",
     description:
-      "Graduated as a software engineer specialized in cloud computing, cybersecurity, and software development.",
+      "Graduated with jury commendation as a software engineer specialized in software development, cloud computing, and cybersecurity, including a semester abroad in Dublin.",
     logo: esilvLogo,
   },
   {
-    period: "Jan – Jul 2026",
+    period: "Feb – Jul 2026",
     org: "Dassault Systèmes",
     role: "R&D Engineer",
     description:
       "Six-month R&D mission working on Kubernetes autoscaling and distributed databases.",
     logo: dassaultLogo,
+  },
+  {
+    period: "May – Aug 2025",
+    org: "Captag",
+    role: "C# & Java Mobile Developer",
+    description:
+      "Migrated legacy systems to .NET 8.0, integrated AI image-generation into a photobooth product, and ran live technical support at events including the Orange Leaders Meeting and Louis Vuitton's Men's Fashion Show.",
   },
   {
     period: null,
@@ -37,11 +44,11 @@ const experience = [
     logo: freelanceLogo,
   },
   {
-    period: "2020 – 2025",
+    period: "2021 – 2025",
     org: "Semi-professional esports team",
     role: "Team Manager",
     description:
-      "Managed a semi-professional esports team for five years, leadership and communication experience that carried straight into how I work with clients and teams.",
+      "Managed three competitive squads a year, leadership and communication experience that carried straight into how I work with clients and teams.",
     logo: esportsLogo,
   },
 ];

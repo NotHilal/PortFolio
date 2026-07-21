@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
 import { EASE } from "../lib/motion";
+import { useLanguage } from "../i18n/LanguageContext";
 
 // Compact grid card for secondary projects — same data shape as ProjectRow,
 // but denser, so the page doesn't spend a full-height row on every project.
 export default function ProjectCard({ project, index }) {
+  const { t } = useLanguage();
   const {
     title,
     category,
@@ -72,7 +74,7 @@ export default function ProjectCard({ project, index }) {
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft transition-colors hover:text-accent"
           >
-            Live <ExternalLink size={12} strokeWidth={1.75} />
+            {t.projects.live} <ExternalLink size={12} strokeWidth={1.75} />
           </a>
         )}
         {githubUrl && (
@@ -82,12 +84,12 @@ export default function ProjectCard({ project, index }) {
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft transition-colors hover:text-accent"
           >
-            <GithubIcon size={12} /> Code
+            <GithubIcon size={12} /> {t.projects.code}
           </a>
         )}
         {!liveUrl && !githubUrl && (
           <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-faint/60">
-            Private project
+            {t.projects.private}
           </span>
         )}
       </div>

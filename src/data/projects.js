@@ -63,7 +63,19 @@ const projects = [
       "A full RPG built from scratch in Java, inspired by Pokémon and League of Legends: a tile-based open world with multiple maps and warp points, a turn-based battle system, champion classes with stats/moves/passives/status effects, an item and inventory system with a shop, party management, NPC interactions, chests, collision detection, sound, and save/load. The engine and UI were built manually with Java Swing and custom rendering (no game framework), pushing deep into factories, builders, and data loaders.",
     image: pokelegendsImg,
     liveUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/NotHilal/MyPokeLegends",
+  },
+  {
+    title: "ChronoMaze",
+    type: "app",
+    category: "Personal Project, Android Game",
+    year: null,
+    tags: ["Kotlin", "Android Studio"],
+    description:
+      "A native Android puzzle game built in Kotlin: players solve shifting maze layouts against a shrinking clock, with level logic and rendering built from scratch.",
+    image: null,
+    liveUrl: null,
+    githubUrl: "https://github.com/NotHilal/ChronoMazeAndroid",
   },
   {
     title: "Java Store Manager",

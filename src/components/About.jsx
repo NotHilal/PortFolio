@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import profile from "../data/profile";
+import { useProfile } from "../i18n/useLocalizedData";
+import { useLanguage } from "../i18n/LanguageContext";
 import Eyebrow from "./Eyebrow";
 import { sectionIndex } from "../data/sections";
 import { EASE } from "../lib/motion";
@@ -10,27 +11,57 @@ import {
   TypeScriptIcon,
   PythonIcon,
   KubernetesIcon,
+  KotlinIcon,
+  DockerIcon,
+  GitIcon,
+  SupabaseIcon,
+  JavaScriptIcon,
+  HTMLIcon,
+  CSSIcon,
+  BashIcon,
+  CICDIcon,
+  MySQLIcon,
+  CassandraIcon,
 } from "./icons/TechIcons";
 
-const coreStack = [
-  { label: "Java", Icon: JavaIcon },
-  { label: "React", Icon: ReactIcon },
-  { label: "C#", Icon: CSharpIcon },
-  { label: "TypeScript", Icon: TypeScriptIcon },
-  { label: "Python", Icon: PythonIcon },
-  { label: "Kubernetes", Icon: KubernetesIcon },
+const toolRows = [
+  [
+    { label: "Java", Icon: JavaIcon },
+    { label: "C#", Icon: CSharpIcon },
+    { label: "Python", Icon: PythonIcon },
+    { label: "Kotlin", Icon: KotlinIcon },
+    { label: "React", Icon: ReactIcon },
+    { label: "TypeScript", Icon: TypeScriptIcon },
+    { label: "JavaScript", Icon: JavaScriptIcon },
+    { label: "HTML", Icon: HTMLIcon },
+    { label: "CSS", Icon: CSSIcon },
+  ],
+  [
+    { label: "Git", Icon: GitIcon },
+    { label: "Bash", Icon: BashIcon },
+    { label: "Docker", Icon: DockerIcon },
+    { label: "Kubernetes", Icon: KubernetesIcon },
+    { label: "CI/CD", Icon: CICDIcon },
+    { label: "MySQL", Icon: MySQLIcon },
+    { label: "Supabase", Icon: SupabaseIcon },
+    { label: "Cassandra", Icon: CassandraIcon },
+  ],
 ];
 
 export default function About() {
+  const profile = useProfile();
+  const { t } = useLanguage();
   return (
     <section
       id="about"
       className="mx-auto max-w-6xl border-t border-line px-6 py-28 sm:px-10"
     >
       <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-        <Eyebrow>Index / {sectionIndex("about")} · About</Eyebrow>
+        <Eyebrow>
+          Index / {sectionIndex("about")} · {t.about.eyebrow}
+        </Eyebrow>
 
-        <div>
+        <div className="min-w-0">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,26 +100,36 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
             className="mt-12 border-t border-line pt-6"
           >
-            <p className="mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.12em] text-ink-faint">
+            <p className="mb-8 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.12em] text-ink-faint">
               <span className="h-px w-6 bg-accent" />
-              Tools &amp; technologies
+              {t.about.tools}
             </p>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              {coreStack.map(({ label, Icon }) => (
-                <span
-                  key={label}
-                  className="flex items-center gap-2 text-ink-soft"
-                >
-                  <Icon size={17} />
-                  <span className="font-mono text-xs uppercase tracking-[0.06em]">
-                    {label}
-                  </span>
-                </span>
+            <div className="space-y-8">
+              {toolRows.map((row, rowIndex) => (
+                <div key={rowIndex} className="marquee-row">
+                  <div
+                    className={`marquee-track items-center gap-12 ${
+                      rowIndex === 1 ? "reverse" : ""
+                    }`}
+                  >
+                    {[...row, ...row].map(({ label, Icon }, i) => (
+                      <div
+                        key={`${label}-${i}`}
+                        className="group flex shrink-0 flex-col items-center gap-3"
+                      >
+                        <Icon
+                          size={34}
+                          className="transition-transform duration-300 ease-out group-hover:-translate-y-1"
+                        />
+                        <span className="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft transition-colors duration-300 group-hover:text-accent">
+                          {label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
-            <p className="mt-5 font-sans text-base leading-loose text-ink-soft">
-              {profile.skills.join(" · ")}
-            </p>
           </motion.div>
         </div>
       </div>

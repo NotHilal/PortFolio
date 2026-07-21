@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
-import profile from "../data/profile";
+import { useProfile } from "../i18n/useLocalizedData";
+import { useLanguage } from "../i18n/LanguageContext";
 import Eyebrow from "./Eyebrow";
 import { sectionIndex } from "../data/sections";
 import { EASE } from "../lib/motion";
 
 export default function Contact() {
+  const profile = useProfile();
+  const { t } = useLanguage();
   return (
     <section
       id="contact"
@@ -16,7 +19,7 @@ export default function Contact() {
       />
 
       <Eyebrow className="mb-6 justify-center">
-        Index / {sectionIndex("contact")} · Contact
+        Index / {sectionIndex("contact")} · {t.contact.eyebrow}
       </Eyebrow>
 
       <motion.p
@@ -26,7 +29,7 @@ export default function Contact() {
         transition={{ duration: 0.5, ease: EASE }}
         className="font-sans text-base text-ink-soft"
       >
-        Have a project in mind?
+        {t.contact.prompt}
       </motion.p>
 
       <motion.a
@@ -38,7 +41,7 @@ export default function Contact() {
         className="group mt-2 inline-block"
       >
         <span className="text-shine block font-display text-[clamp(3rem,12vw,8rem)] leading-none">
-          Let's talk
+          {t.contact.cta}
         </span>
         <span className="mx-auto mt-4 block h-px w-0 bg-accent transition-all duration-500 ease-out group-hover:w-32" />
       </motion.a>
@@ -74,7 +77,7 @@ export default function Contact() {
               rel="noreferrer"
               className="hover:text-accent"
             >
-              Résumé
+              {t.contact.resume}
             </a>
           )}
         </div>

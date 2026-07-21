@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import profile from "../data/profile";
 import { EASE } from "../lib/motion";
+import { useLanguage } from "../i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Work", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+const linkKeys = [
+  { key: "about", href: "#about" },
+  { key: "experience", href: "#experience" },
+  { key: "work", href: "#projects" },
+  { key: "contact", href: "#contact" },
 ];
 
 export default function Navbar() {
+  const { t } = useLanguage();
+  const links = linkKeys.map((link) => ({ ...link, label: t.nav[link.key] }));
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(null);
@@ -81,13 +85,16 @@ export default function Navbar() {
               </li>
             );
           })}
+          <li>
+            <LanguageSwitcher />
+          </li>
         </ul>
 
         <button
           type="button"
           className="flex flex-col items-end gap-1.5 md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={t.nav.toggleMenu}
         >
           <motion.span
             animate={{ rotate: open ? 45 : 0, y: open ? 5 : 0, width: 22 }}
@@ -122,6 +129,13 @@ export default function Navbar() {
                 {link.label}
               </motion.a>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + links.length * 0.06 }}
+            >
+              <LanguageSwitcher className="text-base" />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
