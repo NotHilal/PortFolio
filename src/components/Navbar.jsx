@@ -118,7 +118,7 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-0 bg-[#0a0a0a]/60 md:hidden"
-            onClick={() => setOpen(false)}
+            onPointerDown={() => setOpen(false)}
           />
         )}
       </AnimatePresence>
