@@ -54,7 +54,7 @@ export default function Navbar() {
         scrolled ? "shadow-[0_1px_0_0_var(--color-line)]" : ""
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
+      <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
         <a
           href="#top"
           className="font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:text-accent"
@@ -90,55 +90,50 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <button
-          type="button"
-          className="flex flex-col items-end gap-1.5 md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={t.nav.toggleMenu}
-        >
-          <motion.span
-            animate={{ rotate: open ? 45 : 0, y: open ? 5 : 0, width: 22 }}
-            className="h-px bg-ink"
-          />
-          <motion.span
-            animate={{ rotate: open ? -45 : 0, y: open ? -5 : 0, width: 22 }}
-            className="h-px bg-ink"
-          />
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="flex flex-col items-end gap-1.5"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={t.nav.toggleMenu}
+          >
+            <motion.span
+              animate={{ rotate: open ? 45 : 0, y: open ? 5 : 0, width: 22 }}
+              className="h-px bg-ink"
+            />
+            <motion.span
+              animate={{ rotate: open ? -45 : 0, y: open ? -5 : 0, width: 22 }}
+              className="h-px bg-ink"
+            />
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)" }}
-            exit={{ clipPath: "inset(0 0 100% 0)" }}
-            transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
-            className="fixed inset-0 top-0 flex h-screen flex-col justify-center gap-6 bg-paper px-8 md:hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: EASE }}
+            className="relative z-10 flex max-h-[80vh] flex-col overflow-y-auto border-t border-line bg-paper px-6 pb-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] sm:px-10 md:hidden"
           >
-            {links.map((link, i) => (
-              <motion.a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.06 }}
-                className="font-display text-4xl text-ink"
-              >
-                {link.label}
-              </motion.a>
-            ))}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + links.length * 0.06 }}
-            >
-              <LanguageSwitcher
-                className="text-base"
-                onSelect={() => setOpen(false)}
-              />
-            </motion.div>
+            <div className="flex flex-col divide-y divide-line">
+              {links.map((link, i) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 + i * 0.05 }}
+                  className="py-4 font-display text-2xl text-ink transition-colors active:text-accent"
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
