@@ -2,15 +2,13 @@
 // TODO: fill in `period` (e.g. "2022 — 2025") for each entry, and adjust
 // `role` titles if these aren't your exact ones.
 //
-// logo: a small badge shown next to each row — the ones below are
-// generic placeholder marks (not real company logos), swap them out
-// or leave them, your call.
+// logo: a small badge shown next to each row.
 
-import esilvLogo from "../assets/experience/esilv.svg";
-import dassaultLogo from "../assets/experience/dassault-systemes.svg";
-import freelanceLogo from "../assets/experience/freelance.svg";
-import captagLogo from "../assets/experience/captag.svg";
-import esportsLogo from "../assets/experience/esports.svg";
+import esilvLogo from "../assets/experience/esilv.png";
+import dassaultLogo from "../assets/experience/dassault.png";
+import freelanceLogo from "../assets/experience/freelance.png";
+import captagLogo from "../assets/experience/captag.png";
+import esportsLogo from "../assets/experience/esports.png";
 
 const experience = [
   {
