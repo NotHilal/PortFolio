@@ -48,7 +48,9 @@ export default function Contact() {
 
       <div className="mt-20 flex flex-col gap-4 border-t border-line pt-6 font-mono text-xs uppercase tracking-[0.12em] text-ink-faint sm:flex-row sm:items-center sm:justify-between">
         <span>{profile.location}</span>
-        <span>{profile.email}</span>
+        <a href={`mailto:${profile.email}`} className="hover:text-accent">
+          {profile.email}
+        </a>
         <div className="flex justify-center gap-6">
           {profile.socials.github && (
             <a
@@ -73,8 +75,7 @@ export default function Contact() {
           {profile.resumeUrl && (
             <a
               href={profile.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
+              download
               className="hover:text-accent"
             >
               {t.contact.resume}

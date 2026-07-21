@@ -9,12 +9,13 @@
 // TODO: fill in `year`, `liveUrl`, and `githubUrl` for each project below
 // once you have the real links.
 
-import asiapierceImg from "../assets/projects/asiapierce.svg";
-import hairgoImg from "../assets/projects/hairgo.svg";
-import oaEventsImg from "../assets/projects/oa-events.svg";
-import pokelegendsImg from "../assets/projects/pokelegends.svg";
-import javaStoreManagerImg from "../assets/projects/java-store-manager.svg";
-import buddhabrotImg from "../assets/projects/buddhabrot.svg";
+import asiapierceImg from "../assets/projects/asiapierce.png";
+import hairgoImg from "../assets/projects/hairgo.png";
+import oaEventsImg from "../assets/projects/oa-events.png";
+import pokelegendsImg from "../assets/projects/pokelegends.png";
+import javaStoreManagerImg from "../assets/projects/java-store-manager.png";
+import buddhabrotImg from "../assets/projects/buddhabrot.png";
+import chronomazeImg from "../assets/projects/chronomaze.png";
 
 const projects = [
   {
@@ -26,8 +27,8 @@ const projects = [
     description:
       "Full e-commerce and booking platform for a professional piercing studio: Stripe checkout, real-time appointment slots, wishlists, and multilingual support on the client side, backed by a full admin back-office for inventory, orders, and gallery content in real time.",
     image: asiapierceImg,
-    liveUrl: null,
-    githubUrl: null,
+    liveUrl: "https://asia-pierce.vercel.app/",
+    githubUrl: "https://github.com/NotHilal/PiercingWebsite",
   },
   {
     title: "HairGo",
@@ -38,8 +39,8 @@ const projects = [
     description:
       "Complete salon management platform: clients book stylists, shop products, and message the salon directly with Stripe payments and role-based auth. The back-office runs the whole business: scheduling, timesheets, payroll, sales, and live messaging, built from scratch as a fully operational tool.",
     image: hairgoImg,
-    liveUrl: null,
-    githubUrl: null,
+    liveUrl: "https://hairgo.vercel.app/",
+    githubUrl: "https://github.com/NotHilal/WebsiteHairGo",
   },
   {
     title: "OA Events",
@@ -50,8 +51,8 @@ const projects = [
     description:
       "Website for a furniture rental and events company: product catalog, reservation system, and photo gallery on a clean marble-themed design, with an admin panel for reservations and gallery content. Built with Next.js and Supabase.",
     image: oaEventsImg,
-    liveUrl: null,
-    githubUrl: null,
+    liveUrl: "https://oa-events.vercel.app/",
+    githubUrl: "https://github.com/NotHilal/SiteOAEvents",
   },
   {
     title: "PokeLegends",
@@ -73,7 +74,7 @@ const projects = [
     tags: ["Kotlin", "Android Studio"],
     description:
       "A native Android puzzle game built in Kotlin: players solve shifting maze layouts against a shrinking clock, with level logic and rendering built from scratch.",
-    image: null,
+    image: chronomazeImg,
     liveUrl: null,
     githubUrl: "https://github.com/NotHilal/ChronoMazeAndroid",
   },
@@ -87,10 +88,10 @@ const projects = [
       "A desktop store management application built with JavaFX and connected to a MySQL database. Users register and log in, then browse and manage products across three categories (clothes, shoes, and accessories) with product images, discount logic, and a shopping interface. Built to practice full-stack desktop development with Java, MVC architecture, and relational database integration.",
     image: javaStoreManagerImg,
     liveUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/NotHilal/StoreFinalProject",
   },
   {
-    title: "Buddhabrot Image Generator",
+    title: "Buddhabrot Image Editor",
     type: "app",
     category: "Academic, Scientific Computing",
     year: null,
@@ -99,7 +100,7 @@ const projects = [
       "A scientific computing project that generates Buddhabrot fractal images (a variation of the Mandelbrot set) using custom implementations of complex number arithmetic, pixel mapping, and color gradient rendering. Multithreaded processing with a dedicated threading class significantly reduces render time, combining mathematics, image processing, and parallel computing.",
     image: buddhabrotImg,
     liveUrl: null,
-    githubUrl: null,
+    githubUrl: "https://github.com/NotHilal/ImageEdits",
   },
 ];
 

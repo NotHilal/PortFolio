@@ -87,7 +87,7 @@ const strings = {
     contact: {
       eyebrow: "Contact",
       prompt: "Un projet en tête ?",
-      cta: "Parlons-en",
+      cta: "Contactez-moi",
       resume: "CV",
     },
     footer: {

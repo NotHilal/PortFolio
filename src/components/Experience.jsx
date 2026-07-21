@@ -37,7 +37,7 @@ export default function Experience() {
                 <img
                   src={item.logo}
                   alt={`${item.org} logo`}
-                  className="h-11 w-11 shrink-0 sm:mb-3"
+                  className="h-20 w-20 shrink-0 sm:mb-3"
                 />
               )}
               <div>

@@ -43,6 +43,16 @@ Pages, or any static host.
     project can have just one link, both, or neither.
 - **Resume** — drop a PDF at `public/resume.pdf` and it'll match the
   `resumeUrl` default in `profile.js`.
+- **Language (EN/FR)** — the flag button next to Contact in the navbar
+  toggles the whole site between English and French (persisted in
+  `localStorage`, defaults to the visitor's browser language). UI copy
+  (nav, headings, buttons) lives in `src/i18n/strings.js`. Editable
+  content has an `.fr.js` sibling next to each data file —
+  `profile.fr.js`, `experience.fr.js`, `projects.fr.js` — holding only
+  the translated fields (name/email/links/images/tags stay in the
+  English file and are reused as-is). Keep the `.fr.js` arrays the same
+  length and order as their English source, since entries are merged by
+  index.
 - **Favicon** — `public/favicon.svg` (gold "H" monogram — swap the letter
   or redraw it for your own initials).
 - **Social preview image** — `public/og-image.png`, shown when the link is

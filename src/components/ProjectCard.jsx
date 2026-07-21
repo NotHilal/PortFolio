@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
 import { EASE } from "../lib/motion";
 import { useLanguage } from "../i18n/LanguageContext";
+import ImageLightbox from "./ImageLightbox";
 
 // Compact grid card for secondary projects — same data shape as ProjectRow,
 // but denser, so the page doesn't spend a full-height row on every project.
-export default function ProjectCard({ project, index }) {
+export default function ProjectCard({ project, index, className = "" }) {
   const { t } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const {
     title,
     category,
@@ -29,15 +32,22 @@ export default function ProjectCard({ project, index }) {
         delay: (index % 3) * 0.08,
         ease: EASE,
       }}
-      className="group flex flex-col border border-line p-6 transition-colors duration-300 hover:border-accent/50"
+      className={`group flex flex-col border border-line p-6 transition-colors duration-300 hover:border-accent/50 ${className}`}
     >
       {image && (
         <div className="mb-5 -mx-6 -mt-6 aspect-[16/10] overflow-hidden border-b border-line bg-paper-dim">
-          <img
-            src={image}
-            alt={title}
-            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-          />
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label={`${title} — enlarge image`}
+            className="block h-full w-full cursor-zoom-in"
+          >
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          </button>
         </div>
       )}
 
@@ -93,6 +103,15 @@ export default function ProjectCard({ project, index }) {
           </span>
         )}
       </div>
+
+      {image && (
+        <ImageLightbox
+          src={image}
+          alt={title}
+          open={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+        />
+      )}
     </motion.div>
   );
 }

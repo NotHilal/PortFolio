@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { useProfile } from "../i18n/useLocalizedData";
 import { useLanguage } from "../i18n/LanguageContext";
 import TextLink from "./TextLink";
-import Magnetic from "./Magnetic";
 import DecryptText from "./DecryptText";
 import Typewriter from "./Typewriter";
 import NetworkField from "./NetworkField";
@@ -180,7 +179,7 @@ export default function Hero() {
                     { text: profile.taglineLead, className: "text-ink" },
                     {
                       text: ` ${profile.taglineDetail}`,
-                      className: "text-ink-soft",
+                      className: "text-ink",
                     },
                   ]}
                   className="max-w-2xl font-sans text-xl leading-snug sm:text-2xl"
@@ -188,7 +187,7 @@ export default function Hero() {
               ) : (
                 <p className="max-w-2xl font-sans text-xl leading-snug sm:text-2xl">
                   <span className="text-ink">{profile.taglineLead}</span>{" "}
-                  <span className="text-ink-soft">
+                  <span className="text-ink">
                     {profile.taglineDetail}
                   </span>
                 </p>
@@ -201,12 +200,8 @@ export default function Hero() {
                 transition={{ duration: 0.6, ease: EASE }}
                 className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
               >
-                <Magnetic>
-                  <TextLink href="#projects">{t.hero.viewWork}</TextLink>
-                </Magnetic>
-                <Magnetic>
-                  <TextLink href="#contact">{t.hero.getInTouch}</TextLink>
-                </Magnetic>
+                <TextLink href="#projects">{t.hero.viewWork}</TextLink>
+                <TextLink href="#contact">{t.hero.getInTouch}</TextLink>
               </motion.div>
             )}
           </motion.div>

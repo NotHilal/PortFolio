@@ -58,9 +58,18 @@ export default function Projects() {
             </span>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {more.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
-            ))}
+            {more.map((project, i) => {
+              const isLoneOnLastRow =
+                more.length % 3 === 1 && i === more.length - 1;
+              return (
+                <ProjectCard
+                  key={project.title}
+                  project={project}
+                  index={i}
+                  className={isLoneOnLastRow ? "lg:col-start-2" : ""}
+                />
+              );
+            })}
           </div>
         </div>
       )}

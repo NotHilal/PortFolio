@@ -134,7 +134,10 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + links.length * 0.06 }}
             >
-              <LanguageSwitcher className="text-base" />
+              <LanguageSwitcher
+                className="text-base"
+                onSelect={() => setOpen(false)}
+              />
             </motion.div>
           </motion.div>
         )}

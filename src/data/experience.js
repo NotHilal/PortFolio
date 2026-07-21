@@ -9,6 +9,7 @@
 import esilvLogo from "../assets/experience/esilv.svg";
 import dassaultLogo from "../assets/experience/dassault-systemes.svg";
 import freelanceLogo from "../assets/experience/freelance.svg";
+import captagLogo from "../assets/experience/captag.svg";
 import esportsLogo from "../assets/experience/esports.svg";
 
 const experience = [
@@ -25,7 +26,7 @@ const experience = [
     org: "Dassault Systèmes",
     role: "R&D Engineer",
     description:
-      "Six-month R&D mission working on Kubernetes autoscaling and distributed databases.",
+      "Six-month R&D mission working on Kubernetes autoscaling and distributed databases, plus a metrics-monitoring frontend.",
     logo: dassaultLogo,
   },
   {
@@ -33,14 +34,15 @@ const experience = [
     org: "Captag",
     role: "C# & Java Mobile Developer",
     description:
-      "Migrated legacy systems to .NET 8.0, integrated AI image-generation into a photobooth product, and ran live technical support at events including the Orange Leaders Meeting and Louis Vuitton's Men's Fashion Show.",
+      "Migrated legacy systems to .NET 8.0, integrated AI image-generation into a photobooth product, and ran live technical support at events including the 2025 Orange Leaders Meeting and Louis Vuitton's 2025 Men's Fashion Show.",
+    logo: captagLogo,
   },
   {
     period: null,
     org: "Freelance",
     role: "Full-Stack Developer",
     description:
-      "Shipped full web platforms for real clients end to end: AsiaPierce, HairGo, and OA Events among them.",
+      "Shipped full web platforms for individuals and small businesses.",
     logo: freelanceLogo,
   },
   {
