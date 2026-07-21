@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import profile from "../data/profile";
 import { EASE } from "../lib/motion";
@@ -110,18 +111,22 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-0 bg-[#0a0a0a]/60 md:hidden"
-            onPointerDown={() => setOpen(false)}
-          />
+      {typeof document !== "undefined" &&
+        createPortal(
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="fixed inset-0 z-40 bg-[#0a0a0a]/60 md:hidden"
+                onPointerDown={() => setOpen(false)}
+              />
+            )}
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
 
       <AnimatePresence>
         {open && (
