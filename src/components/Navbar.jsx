@@ -5,6 +5,7 @@ import profile from "../data/profile";
 import { EASE } from "../lib/motion";
 import { useLanguage } from "../i18n/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 const linkKeys = [
   { key: "about", href: "#about" },
@@ -56,12 +57,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
-        <a
-          href="#top"
-          className="font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:text-accent"
-        >
-          {profile.name}
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="#top"
+            className="font-mono text-xs uppercase tracking-[0.15em] text-ink transition-colors hover:text-accent"
+          >
+            {profile.name}
+          </a>
+          <ThemeToggle />
+        </div>
 
         <ul className="hidden items-center gap-10 md:flex">
           {links.map((link) => {

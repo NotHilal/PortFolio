@@ -10,6 +10,8 @@ const strings = {
       work: "Work",
       contact: "Contact",
       toggleMenu: "Toggle menu",
+      switchToLight: "Switch to light mode",
+      switchToDark: "Switch to dark mode",
     },
     hero: {
       booting: "Server starting",
@@ -58,6 +60,8 @@ const strings = {
       work: "Projets",
       contact: "Contact",
       toggleMenu: "Menu",
+      switchToLight: "Passer au mode clair",
+      switchToDark: "Passer au mode sombre",
     },
     hero: {
       booting: "Démarrage du serveur",

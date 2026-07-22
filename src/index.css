@@ -18,6 +18,29 @@
   color-scheme: dark;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-paper: #faf8f4;
+  --color-paper-dim: #f0eee6;
+  --color-ink: #1a1917;
+  --color-ink-soft: #57554e;
+  --color-ink-faint: #96938a;
+  --color-line: #e2ded2;
+  --color-accent: #1d648e;
+}
+
+/* Hero terminal window — always dark chrome, in both themes */
+.terminal-dark {
+  color-scheme: dark;
+  --color-paper: #0a0a0a;
+  --color-paper-dim: #161615;
+  --color-ink: #f5f4f0;
+  --color-ink-soft: #aeada9;
+  --color-ink-faint: #6d6c68;
+  --color-line: #292825;
+  --color-accent: #c9a24b;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -29,6 +52,7 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
@@ -98,6 +122,14 @@ body {
     animation: none;
     background-position: 30% center;
   }
+}
+
+:root[data-theme="light"] .text-shine {
+  background-image: none;
+  animation: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #1d648e;
 }
 
 /* infinite tool-stack marquee — two rows drifting opposite directions */

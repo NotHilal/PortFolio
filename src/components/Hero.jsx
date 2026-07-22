@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="w-[92%] max-w-[1400px] overflow-hidden border-2 border-gray-300 bg-paper/70 backdrop-blur-md shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
+          className="terminal-dark w-[92%] max-w-[1400px] overflow-hidden border-2 border-gray-300 bg-paper backdrop-blur-md shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
         >
           <div className="flex items-center gap-2 border-b-2 border-gray-300 px-5 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
