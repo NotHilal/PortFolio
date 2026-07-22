@@ -61,7 +61,7 @@ const projects = [
     year: null,
     tags: ["Java", "JavaFX", "OOP", "Game Dev"],
     description:
-      "A full RPG built from scratch in Java, inspired by Pokémon and League of Legends: a tile-based open world with multiple maps and warp points, a turn-based battle system, champion classes with stats/moves/passives/status effects, an item and inventory system with a shop, party management, NPC interactions, chests, collision detection, sound, and save/load. The engine and UI were built manually with Java Swing and custom rendering (no game framework), pushing deep into factories, builders, and data loaders.",
+      "A full Pokémon-style RPG built from scratch in Java, where League of Legends champions take the place of Pokémon: capture, train, and battle them turn-by-turn as you explore a tile-based open world across multiple maps and warp points. Each champion carries its own stats, moves, passives, and status effects, backed by a full item and inventory system with a shop, party management, NPC interactions, chests, collision detection, sound, and save/load. The engine and UI were built entirely by hand with Java Swing and custom rendering — no game framework — leaning heavily on factories, builders, and data loaders.",
     image: pokelegendsImg,
     liveUrl: null,
     githubUrl: "https://github.com/NotHilal/MyPokeLegends",

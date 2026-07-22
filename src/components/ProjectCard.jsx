@@ -4,13 +4,13 @@ import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
 import { EASE } from "../lib/motion";
 import { useLanguage } from "../i18n/LanguageContext";
-import ImageLightbox from "./ImageLightbox";
+import ProjectDetailModal from "./ProjectDetailModal";
 
 // Compact grid card for secondary projects — same data shape as ProjectRow,
 // but denser, so the page doesn't spend a full-height row on every project.
 export default function ProjectCard({ project, index, className = "" }) {
   const { t } = useLanguage();
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [detailOpen, setDetailOpen] = useState(false);
   const {
     title,
     category,
@@ -32,22 +32,25 @@ export default function ProjectCard({ project, index, className = "" }) {
         delay: (index % 3) * 0.08,
         ease: EASE,
       }}
-      className={`group flex flex-col border border-line p-6 transition-colors duration-300 hover:border-accent/50 ${className}`}
+      role="button"
+      tabIndex={0}
+      onClick={() => setDetailOpen(true)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setDetailOpen(true);
+        }
+      }}
+      aria-label={`${title} — view project details`}
+      className={`group flex cursor-pointer flex-col border border-line p-6 transition-colors duration-300 hover:border-accent/50 ${className}`}
     >
       {image && (
         <div className="mb-5 -mx-6 -mt-6 aspect-[16/10] overflow-hidden border-b border-line bg-paper-dim">
-          <button
-            type="button"
-            onClick={() => setLightboxOpen(true)}
-            aria-label={`${title} — enlarge image`}
-            className="block h-full w-full cursor-zoom-in"
-          >
-            <img
-              src={image}
-              alt={title}
-              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-            />
-          </button>
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
         </div>
       )}
 
@@ -82,6 +85,7 @@ export default function ProjectCard({ project, index, className = "" }) {
             href={liveUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft transition-colors hover:text-accent"
           >
             {t.projects.live} <ExternalLink size={12} strokeWidth={1.75} />
@@ -92,6 +96,7 @@ export default function ProjectCard({ project, index, className = "" }) {
             href={githubUrl}
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft transition-colors hover:text-accent"
           >
             <GithubIcon size={12} /> {t.projects.code}
@@ -104,14 +109,11 @@ export default function ProjectCard({ project, index, className = "" }) {
         )}
       </div>
 
-      {image && (
-        <ImageLightbox
-          src={image}
-          alt={title}
-          open={lightboxOpen}
-          onClose={() => setLightboxOpen(false)}
-        />
-      )}
+      <ProjectDetailModal
+        project={project}
+        open={detailOpen}
+        onClose={() => setDetailOpen(false)}
+      />
     </motion.div>
   );
 }

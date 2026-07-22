@@ -21,7 +21,7 @@ const projectsFr = [
   {
     category: "Projet personnel, Jeu RPG",
     description:
-      "Un RPG complet développé de A à Z en Java, inspiré de Pokémon et League of Legends : un monde ouvert en tuiles avec plusieurs cartes et points de téléportation, un système de combat au tour par tour, des classes de champions avec stats/sorts/passifs/effets de statut, un système d'objets et d'inventaire avec boutique, gestion d'équipe, interactions avec les PNJ, coffres, détection de collisions, son, et sauvegarde/chargement. Le moteur et l'interface ont été construits à la main avec Java Swing et un rendu personnalisé (sans framework de jeu), avec un usage poussé des factories, builders et data loaders.",
+      "Un RPG à la Pokémon développé de A à Z en Java, où les champions de League of Legends prennent la place des Pokémon : on les capture, on les entraîne et on les affronte au tour par tour en explorant un monde ouvert en tuiles réparti sur plusieurs cartes et points de téléportation. Chaque champion possède ses propres stats, sorts, passifs et effets de statut, soutenus par un système complet d'objets et d'inventaire avec boutique, gestion d'équipe, interactions avec les PNJ, coffres, détection de collisions, son et sauvegarde/chargement. Le moteur et l'interface ont été entièrement construits à la main avec Java Swing et un rendu personnalisé — sans framework de jeu — avec un usage poussé des factories, builders et data loaders.",
   },
   {
     category: "Projet personnel, Jeu Android",
