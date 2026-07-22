@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { setLenis } from "../lib/lenis";
 
 const NAV_OFFSET = -96;
 
@@ -17,6 +18,7 @@ export default function SmoothScroll() {
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
     });
+    setLenis(lenis);
 
     let rafId;
     function raf(time) {
@@ -42,6 +44,7 @@ export default function SmoothScroll() {
       document.removeEventListener("click", handleClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      setLenis(null);
     };
   }, []);
 

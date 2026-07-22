@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, X } from "lucide-react";
 import { GithubIcon } from "./icons/BrandIcons";
 import { useLanguage } from "../i18n/LanguageContext";
+import { getLenis } from "../lib/lenis";
 
 // Full project preview opened from a card in the "more projects" grid —
 // shows the full image plus every bit of project info in one panel.
@@ -16,9 +17,13 @@ export default function ProjectDetailModal({ project, open, onClose }) {
     }
     document.addEventListener("keydown", onKeyDown);
     document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    getLenis()?.stop();
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      getLenis()?.start();
     };
   }, [open, onClose]);
 
@@ -47,7 +52,8 @@ export default function ProjectDetailModal({ project, open, onClose }) {
             exit={{ scale: 0.96, opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-y-auto border border-line bg-paper shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
+            data-lenis-prevent
+            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-y-auto overscroll-contain border border-line bg-paper shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
           >
             <button
               type="button"

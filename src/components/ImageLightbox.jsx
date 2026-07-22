@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, X } from "lucide-react";
+import { getLenis } from "../lib/lenis";
 
 // Full-screen preview for a project image — opened on click, closed via
 // the X, the back arrow, Escape, or a click on the backdrop.
@@ -12,9 +13,13 @@ export default function ImageLightbox({ src, alt, open, onClose }) {
     }
     document.addEventListener("keydown", onKeyDown);
     document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    getLenis()?.stop();
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      getLenis()?.start();
     };
   }, [open, onClose]);
 
