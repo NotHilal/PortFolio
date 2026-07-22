@@ -36,7 +36,7 @@ const projectsFr = [
   {
     category: "Académique, Calcul scientifique",
     description:
-      "Un projet de calcul scientifique qui génère des images fractales Buddhabrot (une variante de l'ensemble de Mandelbrot) à l'aide d'implémentations personnalisées d'arithmétique des nombres complexes, de mapping de pixels et de rendu de dégradés de couleurs. Un traitement multithread avec une classe de threading dédiée réduit considérablement le temps de rendu, combinant mathématiques, traitement d'image et calcul parallèle.",
+      "Une application d'édition d'images qui applique plusieurs filtres, cache une image à l'intérieur d'une autre grâce à la stéganographie par bit de poids fort et de poids faible (LSB/MSB), et génère et lit des codes QR. Elle génère aussi des fractales en mono-thread et en multithread, en basculant vers le multithread pour rester rapide sur les grandes fractales. (Une fractale est un motif qui se répète à toutes les échelles, révélant la même structure complexe peu importe le niveau de zoom.)",
   },
 ];
 

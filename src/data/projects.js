@@ -91,13 +91,13 @@ const projects = [
     githubUrl: "https://github.com/NotHilal/StoreFinalProject",
   },
   {
-    title: "Buddhabrot Image Editor",
+    title: "Image Editor",
     type: "app",
     category: "Academic, Scientific Computing",
     year: null,
-    tags: ["C#", "Multithreading", "Complex Numbers", "Fractal Mathematics"],
+    tags: ["C#", "Multithreading", "Steganography", "QR Codes", "Fractal Mathematics"],
     description:
-      "A scientific computing project that generates Buddhabrot fractal images (a variation of the Mandelbrot set) using custom implementations of complex number arithmetic, pixel mapping, and color gradient rendering. Multithreaded processing with a dedicated threading class significantly reduces render time, combining mathematics, image processing, and parallel computing.",
+      "An image editing app that applies multiple filters, hides an image inside another using least/most significant bit (LSB/MSB) steganography, and generates and reads QR codes. It also renders fractals using both single-threaded and multithreaded processing, switching to multithreading to keep things fast for large fractals. (A fractal is a pattern that repeats itself at every scale, revealing the same intricate structure no matter how far you zoom in.)",
     image: buddhabrotImg,
     liveUrl: null,
     githubUrl: "https://github.com/NotHilal/ImageEdits",
