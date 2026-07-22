@@ -2,8 +2,10 @@ import { useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../i18n/LanguageContext";
+import enFlag from "../assets/en.png";
+import frFlag from "../assets/fr.png";
 
-const FLAG = { en: "🇬🇧", fr: "🇫🇷" };
+const FLAG = { en: enFlag, fr: frFlag };
 const NAME = { en: "English", fr: "Français" };
 const OPTIONS = ["en", "fr"];
 
@@ -21,9 +23,12 @@ export default function LanguageSwitcher({ className = "", onSelect }) {
         aria-expanded={open}
         className="relative z-20 flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.1em] text-ink-soft transition-colors hover:text-accent"
       >
-        <span aria-hidden="true" className="text-base leading-none">
-          {FLAG[lang]}
-        </span>
+        <img
+          src={FLAG[lang]}
+          alt=""
+          aria-hidden="true"
+          className="h-3.5 w-5 object-cover"
+        />
         <span>{lang}</span>
       </button>
 
@@ -69,9 +74,12 @@ export default function LanguageSwitcher({ className = "", onSelect }) {
                     code === lang ? "text-accent" : "text-ink-soft"
                   }`}
                 >
-                  <span aria-hidden="true" className="text-base leading-none">
-                    {FLAG[code]}
-                  </span>
+                  <img
+                    src={FLAG[code]}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-3.5 w-5 object-cover"
+                  />
                   {NAME[code]}
                 </button>
               </li>
